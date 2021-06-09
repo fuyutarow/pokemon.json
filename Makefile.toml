@@ -3,6 +3,22 @@ script = '''
 brew install fuyutarow/tap/pq
 '''
 
+[tasks.concat]
+script = '''
+makers concat-en
+makers concat-ja
+'''
+
+[tasks.concat-en]
+script = '''
+mkdir -p tmp
+for i in $(seq 1 8); do
+    pq en/gen$i-en.json -t yaml > tmp/$i.yml
+done
+cat tmp/* | pq -f yaml -t json -c > en/pokemon.json
+rm -rf tmp
+'''
+
 
 [tasks.concat-ja]
 script = '''
