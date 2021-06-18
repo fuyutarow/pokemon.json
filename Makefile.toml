@@ -2,6 +2,11 @@
 script = '''
 brew install fuyutarow/tap/pq
 '''
+[tasks.schema-check]
+script = '''
+ajv -s schema.json -d en/pokemon.json
+ajv -s schema.json -d ja/pokemon.json
+'''
 
 [tasks.concat]
 script = '''
@@ -18,7 +23,6 @@ done
 cat tmp/* | pq -f yaml -t json -c > en/pokemon.json
 rm -rf tmp
 '''
-
 
 [tasks.concat-ja]
 script = '''

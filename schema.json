@@ -1,0 +1,144 @@
+{
+  "$id": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "no": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "integer"
+    },
+    "galar_dex": {
+      "type": "integer"
+    },
+    "base_stats": {
+      "description": "HP, Attack, Defense, Sp.Attack, Sp.Defense, Speed",
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "integer"
+      }
+    },
+    "ev_yeild": {
+      "description": "effort value yield (When a Pokémon is defeated in battle, it will give effort values to the Pokémon that participated in the battle against it)",
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "integer"
+      }
+    },
+    "gender-ratio": {
+      "type": "integer"
+    },
+    "catch-rate": {
+      "type": "integer"
+    },
+    "abilitiese": {
+      "description": "ability1, ability2, hidden ability",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "types": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {
+        "type": "string"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "exp-group": {
+      "type": "string"
+    },
+    "egg-group": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "height": {
+      "type": "number"
+    },
+    "weight": {
+      "type": "number"
+    },
+    "color": {
+      "description": "main color of Pokémon (the most used color)",
+      "type": "string"
+    },
+    "evolutions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "species": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "method_value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "level_up_moves": {
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "tms": {
+      "description": "Technical Machines",
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "egg-moves": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trs": {
+      "description": "Technical Records",
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  }
+}
