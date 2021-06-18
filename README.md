@@ -1,11 +1,176 @@
-## pokemon-data.json
-Gen1 ~ Gen 8 all .json data
+# pokemon.json
 
-## Report
-@dayu_282_
+This is all the data for generations 1~8 of Pokémon.
+The data is based on @SciresM's mining data, so the names of Form Changes and Mega-Syncers are 00-1 and so on.
+Updates will be made as soon as I can observe @SciresM's mining data. (He is a famous data miner, so there will be almost no interruption in updates.)
+
+## Credit
+- [@ScriesM](https://twitter.com/sciresm)
+- @dayu_282_
+
 
 ## References
 https://pastebin.com/u/SciresM
+
+
+## `pokemon.json`
+
+- [en/pokemon.json](https://github.com/fuyutarow/pokemon.json/blob/master/en/pokemon.json)
+- [ja/pokemon.json](https://github.com/fuyutarow/pokemon.json/blob/master/ja/pokemon.json)
+
+### [schema.json](https://github.com/fuyutarow/pokemon.json/blob/master/schema.json)
+```json:schema.json
+{
+  "$id": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "no": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "integer"
+    },
+    "galar_dex": {
+      "type": "integer"
+    },
+    "base_stats": {
+      "description": "HP, Attack, Defense, Sp.Attack, Sp.Defense, Speed",
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "integer"
+      }
+    },
+    "ev_yeild": {
+      "description": "effort value yield (When a Pokémon is defeated in battle, it will give effort values to the Pokémon that participated in the battle against it)",
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "integer"
+      }
+    },
+    "gender-ratio": {
+      "type": "integer"
+    },
+    "catch-rate": {
+      "type": "integer"
+    },
+    "abilitiese": {
+      "description": "ability1, ability2, hidden ability",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "types": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {
+        "type": "string"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "exp-group": {
+      "type": "string"
+    },
+    "egg-group": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "height": {
+      "type": "number"
+    },
+    "weight": {
+      "type": "number"
+    },
+    "color": {
+      "description": "main color of Pokémon (the most used color)",
+      "type": "string"
+    },
+    "evolutions": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "species": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "method_value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "level_up_moves": {
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "tms": {
+      "description": "Technical Machines",
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "egg-moves": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "trs": {
+      "description": "Technical Records",
+      "type": "array",
+      "items": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  }
+}
+```
+
+---
+
+
+[8世代対応全ポケモンの.jsonファイルを作ってみた](https://qiita.com/dayu_282_/items/f03edc0f4266c5d67d69)
+
 
 ## pokemon-data.json
 １~8世代までのすべてのデータです。英語版と日本語版を作成したのでご自由にお使いください。
